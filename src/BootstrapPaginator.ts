@@ -11,7 +11,7 @@ import * as _ from "lodash";
                 <a class="page-link" style="cursor: pointer">&laquo;</a>
             </li>
             <li class="page-item" [class.disabled]="p.activePage == 1" (click)="p.setPage(p.activePage - 1)">
-                <a class="page-link" style="cursor: pointer">&lquo;</a>
+                <a class="page-link" style="cursor: pointer">&lt;</a>
             </li>
             <li class="page-item" *ngIf="p.activePage > 4 && p.activePage + 1 > p.lastPage" (click)="p.setPage(p.activePage - 4)">
                 <a class="page-link" style="cursor: pointer">{{p.activePage-4}}</a>
