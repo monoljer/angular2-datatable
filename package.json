@@ -1,7 +1,7 @@
 {
-  "name": "angular2-datatable",
+  "name": "angular2-datatable-ex",
   "version": "0.6.0",
-  "description": "DataTable component for Angular2 framework",
+  "description": "DataTable component for Angular2 framework (fork)",
   "main": "index.js",
   "scripts": {
     "prebuild": "rimraf lib",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mariuszfoltak/angular2-datatable.git"
+    "url": "git+https://github.com/monoljer/angular2-datatable.git"
   },
   "keywords": [
     "angular",
@@ -31,9 +31,9 @@
   "author": "mariuszfoltak@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mariuszfoltak/angular2-datatable/issues"
+    "url": "https://github.com/monoljer/angular2-datatable/issues"
   },
-  "homepage": "https://github.com/mariuszfoltak/angular2-datatable#readme",
+  "homepage": "https://github.com/monoljer/angular2-datatable#readme",
   "devDependencies": {
     "@angular/core": "^2.1.0",
     "@angular/compiler": "^2.1.0",
