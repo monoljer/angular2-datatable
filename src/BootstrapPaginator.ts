@@ -8,10 +8,10 @@ import * as _ from "lodash";
     <mfPaginator #p [mfTable]="mfTable">
         <ul class="pagination" *ngIf="p.dataLength > p.rowsOnPage">
             <li class="page-item" [class.disabled]="p.activePage <= 1" (click)="p.setPage(1)">
-                <a class="page-link" style="cursor: pointer">&laquo;</a>
+                <a class="page-link" style="cursor: pointer"><i class="fa fa-angle-double-left"></i></a>
             </li>
             <li class="page-item" [class.disabled]="p.activePage == 1" (click)="p.setPage(p.activePage - 1)">
-                <a class="page-link" style="cursor: pointer">&lt;</a>
+                <a class="page-link" style="cursor: pointer"><i class="fa fa-angle-left"></i></a>
             </li>
             <li class="page-item" *ngIf="p.activePage > 4 && p.activePage + 1 > p.lastPage" (click)="p.setPage(p.activePage - 4)">
                 <a class="page-link" style="cursor: pointer">{{p.activePage-4}}</a>
@@ -40,20 +40,23 @@ import * as _ from "lodash";
             <li class="page-item" *ngIf="p.activePage + 4 <= p.lastPage && p.activePage < 2" (click)="p.setPage(p.activePage + 4)">
                 <a class="page-link" style="cursor: pointer">{{p.activePage+4}}</a>
             </li>
+            <li class="page-item" [class.disabled]="p.activePage >= p.lastPage" (click)="p.setPage(p.activePage + 1)">
+            <a class="page-link" style="cursor: pointer"><i class="fa fa-angle-right"></i></a>
+        </li>
             <li class="page-item" [class.disabled]="p.activePage >= p.lastPage" (click)="p.setPage(p.lastPage)">
-                <a class="page-link" style="cursor: pointer">&raquo;</a>
+                <a class="page-link" style="cursor: pointer"><i class="fa fa-angle-double-right"></i></a>
             </li>
         </ul>
         <ul class="pagination pull-right float-sm-right" *ngIf="p.dataLength > minRowsOnPage">
-            <li class="page-item" *ngFor="let rows of rowsOnPageSet" [class.active]="p.rowsOnPage===rows" (click)="p.setRowsOnPage(rows)">
-                <a class="page-link" style="cursor: pointer">{{rows}}</a>
+            <li class="page-item" *ngFor="let rows of rowsOnPageSet" [class.active]="p.rowsOnPage===rows.count" (click)="p.setRowsOnPage(rows.count)">
+                <a class="page-link" style="cursor: pointer">{{rows.name}}</a>
             </li>
         </ul>
     </mfPaginator>
     `
 })
 export class BootstrapPaginator implements OnChanges {
-    @Input("rowsOnPageSet") rowsOnPageSet = [];
+    @Input("rowsOnPageSet") rowsOnPageSet = Array<any>();
     @Input("mfTable") mfTable: DataTable;
 
     minRowsOnPage = 0;
