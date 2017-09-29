@@ -1,6 +1,6 @@
 {
   "name": "angular2-datatable-ex",
-  "version": "0.6.1",
+  "version": "0.6.3",
   "description": "DataTable component for Angular2 framework (fork)",
   "main": "index.js",
   "scripts": {
